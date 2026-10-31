@@ -1,0 +1,56 @@
+{
+  "name": "accessibility-testing-framework",
+  "version": "1.0.0",
+  "description": "Enterprise Accessibility Testing Framework with WCAG 2.1/2.2 AA coverage, axe-core, Playwright, Vitest, and Pa11y",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:a11y": "playwright test tests/e2e/wcag-audit.spec.ts",
+    "test:keyboard": "playwright test tests/e2e/keyboard-navigation.spec.ts",
+    "audit:pa11y": "node scripts/run-pa11y-audit.js",
+    "audit:summary": "node scripts/generate-a11y-summary.js",
+    "test:all": "npm run test:unit && npm run test:e2e && npm run audit:pa11y && npm run audit:summary"
+  },
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "wcag",
+    "axe-core",
+    "playwright",
+    "pa11y",
+    "vitest",
+    "jest-axe",
+    "wai-aria"
+  ],
+  "dependencies": {
+    "lucide-react": "^1.66.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/jest-axe": "^3.5.9",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "axe-html-reporter": "^2.2.11",
+    "concurrently": "^10.0.6",
+    "jest-axe": "^11.0.0",
+    "jsdom": "^29.1.1",
+    "pa11y": "^10.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
